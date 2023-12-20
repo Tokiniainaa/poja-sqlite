@@ -41,17 +41,17 @@ Resources:
     Type: AWS::EFS::MountTarget
     Properties:
       FileSystemId: !Ref Filesystem
-      SubnetId: !Sub '{{resolve:ssm:C:/Program Files/Git/poja-sqlite/subnet/public1/id}}'
+      SubnetId: !Sub '{{resolve:ssm:/poja-sqlite/subnet/public1/id}}'
       SecurityGroups:
-        - !Sub '{{resolve:ssm:C:/Program Files/Git/poja-sqlite/sg/id}}'
+        - !Sub '{{resolve:ssm:/poja-sqlite/sg/id}}'
 
   MountTarget2:
     Type: AWS::EFS::MountTarget
     Properties:
       FileSystemId: !Ref Filesystem
-      SubnetId: !Sub '{{resolve:ssm:C:/Program Files/Git/poja-sqlite/subnet/public2/id}}'
+      SubnetId: !Sub '{{resolve:ssm:/poja-sqlite/subnet/public2/id}}'
       SecurityGroups:
-        - !Sub '{{resolve:ssm:C:/Program Files/Git/poja-sqlite/sg/id}}'
+        - !Sub '{{resolve:ssm:/poja-sqlite/sg/id}}'
 
 Outputs:
   AccessPointArnSSM:
